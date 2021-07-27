@@ -5,8 +5,8 @@ import os
 import cv2
 
 # source and destination path where we want to store the images
-source_path = "../Images/RGB/"
-destination_path = "../Images/GRAY_SCALE/"
+source_path = "../ImageDataset/"
+destination_path = "../ImageDataset/"
 
 
 if len(os.listdir(destination_path)) == 0: # check if destination folder has its sub-category folder i.e., mild, moderate and severe
@@ -32,7 +32,7 @@ for p in os.listdir(source_path):
                 image = cv2.imread(image_path) # reading an image
                 gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY) # converting the image to GRAYSCALE
                 des_path = os.path.join(destination_path, category(path)) # destination_path with particular category
-                des_path = os.path.join(des_path, image_path.split("/")[-1]) # destination path with the corresponding image
+                des_path = os.path.join(des_path, "GRAYSCALE_" + image_path.split("/")[-1]) # destination path with the corresponding image
                 cv2.imwrite(des_path, gray_image) # pushed the image.
         except: # This statement will happen, if the image is already grayscale or can't be converted into grayscale.
             print("Images can't be Converted")

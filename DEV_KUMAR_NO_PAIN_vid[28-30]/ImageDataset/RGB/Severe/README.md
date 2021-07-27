@@ -1,1 +1,0 @@
-#### According to me and the data I have visualize there is no image which can be clssified as in **Severe Pain** category.
